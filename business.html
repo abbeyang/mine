@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>商务办公</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+	$(function(){
+		var url=window.location.search
+		var id=url.substring(url.indexOf("=")+1)
+		console.log(id)
+		$.ajax({
+			type:"get",
+			url:"data.json",
+			async:true,
+			success:function(data){
+				var result=data[id]
+				console.log(result.imgsrc)
+				$('#pic').attr("src",result.imgsrc)
+				$("#desc span").each(function(index,element){
+					$("#desc span").eq(index).html(result.desc[index])
+				})
+			}
+			
+		});				
+	})
+	</script>
+	
+	<!-- Demo styles -->
+</head>
+<body>
+	<!-- Swiper -->
+	<div class="swiper-container swiper1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide content">
+				<div class="nav-bar">
+					<div class="left"><a href="index.html"><img src="img/back_icon.png"></a></div>
+					<div class="mid">商务办公</div>
+					<div class="right button"><a href="#"><img src="img/menu_icon.png"></a></div>
+				</div>	
+				<div class="swiper-container swiper2 marginTop">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide wedding">
+                    		<div class="business">
+                    			<img id="pic">
+                				<div>
+                					<p id="desc">
+				            			<span></span><br>
+			            				<span></span><br>
+			        					<span></span><br>
+			    						<span></span><br>
+		    							<span></span>
+				            		</p>
+                				</div>
+                    		</div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-v"></div>
+                </div>
+			</div>	
+			<div class="swiper-slide menu">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="entertainment.html">康体娱乐</a></li>
+					<li><a href="meeting.html">会议会展</a></li>
+					<li><a href="wedding.html">婚宴婚庆</a></li>
+					<li><a href="room.html">舒适房客</a></li>
+					<li><a href="restaurant.html">餐饮美食</a></li>
+					<li><a href="#">商务办公</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- Swiper JS -->
+	<script src="js/swiper.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

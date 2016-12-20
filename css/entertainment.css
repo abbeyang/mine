@@ -1,0 +1,92 @@
+body {
+  background-color: #190d07;
+  
+}
+.nav-bar {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  padding-top: 0.26rem;
+  height: 0.62rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.3rem;
+  background-color: #190d07;
+}
+.nav-bar img {
+  width: 0.4rem;
+}
+.nav-bar .mid {
+  flex: 1;
+}
+.nav-bar .left {
+  margin-left: 0.45rem;
+  text-align: left;
+}
+.nav-bar .right {
+  margin-right: 0.45rem;
+  text-align: right;
+}
+.content {
+  font-size: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.content .box a {
+  color: #fff;
+  display: block;
+  text-align: left;
+  width: 100%;
+  height: 3.1rem;
+  text-decoration: none;
+}
+.content .box {
+  height: 3.1rem;
+  margin-bottom: 0.1rem;
+}
+.content .box h2 {
+  text-decoration: none;
+  font-size: 0.26rem;
+  line-height: 0.66rem;
+  margin: 0 0 0 0.55rem;
+}
+.content .box1 {
+  background: url(../img/entertainment_01.jpg) no-repeat no-repeat center / cover;
+}
+.content .box2 {
+  background: url(../img/entertainment_02.jpg) no-repeat no-repeat center / cover;
+}
+.content .box3 {
+  background: url(../img/entertainment_03.jpg) no-repeat no-repeat center / cover;
+}
+.content .box1 p {
+  text-align: center;
+  font-size: 0.24rem;
+  padding-top: 0.85rem;
+}
+#gym img {
+  width: 100%;
+}
+#gym h2 {
+  margin-top: 0.48rem;
+  line-height: 1;
+  margin-bottom: 0.28rem;
+  font-size: 0.32rem;
+}
+#gym p {
+  margin-bottom: 1.1rem;
+  line-height: 0.36rem;
+  font-size: 0.24rem;
+}
+#gym a {
+  letter-spacing: 0.5em;
+  width: 2.62rem;
+  height: 0.6rem;
+  display: inline-block;
+  line-height: 0.6rem;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  font-size: 0.26rem;
+}

@@ -1,0 +1,35 @@
+.swiper-container {
+    width: 100%;
+
+}
+.wed{padding-bottom: 0.8rem}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+.meeting{
+    width: 5.3rem;
+	height: 7.3rem;
+}
+
+body {background: url(../img/entertainment_bg.jpg) no-repeat center /cover;}
+body,ul,li,p,a,h1,h2,h3,h4,h5,input{padding:0;margin:0;font-family:"苹方","微软雅黑";}
+input{outline:none;background:none;color:#fff;border: none;}
+
+
+
+.content .box1 {background: url(../img/meeting_01.jpg) no-repeat no-repeat center /cover;}
+.content .box2 {background: url(../img/meeting_02.jpg) no-repeat no-repeat center /cover;}
+.content .box3 {background: url(../img/meeting_03.jpg) no-repeat no-repeat center /cover;}
+.content .box4 {background: url(../img/meeting_04.jpg) no-repeat no-repeat center /cover;}
+
+.content .box1 p {
+  text-align: center;
+  font-size: 0.24rem;
+  padding-top: 0.85rem;
+}
+.meeting .text {text-align:left;position:absolute;left:0;top:0;color:#9f7b59;padding:0 0.24rem}
+.meeting .text h2{font-size:0.3rem;margin-top:0.10rem ;}
+.meeting .text p{font-size:0.28rem;margin-top:0.10rem ;}
+.meeting .text .des{font-size:0.24rem;}
+

@@ -1,0 +1,33 @@
+.content .box a{
+    color:#fff;
+    display: block;
+    text-align: left;
+    width: 100%;
+    height: 3.1rem;
+    text-decoration: none;
+}
+.content .box{height: 3.1rem;margin-bottom:0.1rem;}
+.content .box h2 {
+  font-size: 0.26rem;
+  line-height: 0.66rem;
+  margin: 0 0 0 0.55rem;
+}
+.content .box1 {background: url(../img/restaurant_01.jpg) no-repeat no-repeat center /cover;}
+.content .box2 {background: url(../img/restaurant_02.jpg) no-repeat no-repeat center /cover;}
+.content .box3 {background: url(../img/restaurant_03.jpg) no-repeat no-repeat center /cover;}
+.content .box4 {background: url(../img/restaurant_01.jpg) no-repeat no-repeat center /cover;}
+.content .box5 {background: url(../img/restaurant_01.jpg) no-repeat no-repeat center /cover;}
+.content .box6 {background: url(../img/restaurant_01.jpg) no-repeat no-repeat center /cover;}
+.content .box7 {background: url(../img/restaurant_01.jpg) no-repeat no-repeat center /cover;}
+.content  p {
+  text-align: center;
+  font-size: 0.24rem;
+  padding-top: 0.85rem;
+}
+.content .meeting1 {background: url(../img/meeting_01.jpg) no-repeat no-repeat center /cover;}
+.content .meeting2 {background: url(../img/meeting_02.jpg) no-repeat no-repeat center /cover;}
+.content .meeting3 {background: url(../img/meeting_03.jpg) no-repeat no-repeat center /cover;}
+.content .meeting4 {background: url(../img/meeting_04.jpg) no-repeat no-repeat center /cover;}
+
+
+

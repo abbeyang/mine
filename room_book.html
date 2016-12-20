@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>舒适客房</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link href="css/room.css" rel="stylesheet">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+	$(function(){
+		var n=1;
+		$("#num").html(n)
+		var ref=document.referrer
+		var id=ref.substring(ref.indexOf("=")+1)
+		console.log(id)
+		$.ajax({
+			type:"get",
+			url:"data.json",
+			async:true,
+			success:function(data){
+				var result=data.room[id]
+				console.log(result)
+				$('#title').html(result.title);
+				$('#pic').attr("src",result.imgsrc)
+			}			
+		});	
+		$('#plus').on("click",function(){
+			n++;
+			$('#price').html("总金额 ："+n*899+"￥")
+			$("#num").html(n)
+		})
+		$('#minus').on("click",function(){
+			n--;
+			if(n<=0){n=1}
+			$('#price').html("总金额 ："+n*899+"￥")
+			$("#num").html(n)			
+		})
+		var text1="- 在未提供公司或信用卡担保的情况下，酒店最多保留预订至到店当天下午6点（视酒店当日情况而定）<br>"+
+				"- 在担保情况下更改或取消预订请于到店当天下午6点前通知酒店，酒店将有权对其未能及时取消或未抵房间收取第一晚房费未能及时通知取消收取一晚房费<br>"+
+				"- 对于延迟退房，酒店将按规定收取费用。 下午6点前退房，需支付所付房价的50%，6点以后退房，需支付全天房价<br>"+
+				"- 酒店入住时间为下午2点，离店时间为中午12点尽享38平米安静舒适的双床客房 房间特点 房间面积38平方米<br>"
+		var text2="温馨舒适的住宿环境<br>"+
+					"温馨舒适的住宿环境<br>"+
+					"温馨舒适的住宿环境<br>"+
+					"温馨舒适的住宿环境"
+		$("#info div").eq(0).on("click",function(){
+			$("#info div").removeClass("ac")
+			$(this).addClass('ac')
+			$("#content").html(text1)
+		})
+		$("#info div").eq(1).on("click",function(){
+			$("#info div").removeClass("ac")
+			$(this).addClass('ac')
+			$("#content").html(text2)
+		})
+		
+	})
+	</script>
+	<!-- Demo styles -->
+</head>
+<body>
+	<!-- Swiper -->
+	<div class="swiper-container swiper1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide content"  style="display: block;">
+				<div class="nav-bar">
+					<div class="left"><a onclick="my()"><img src="img/back_icon.png"></a></div>
+					<div class="mid">舒适客房</div>
+					<div class="right button"><a href="#"><img src="img/menu_icon.png"></a></div>
+				</div>
+				<div  class="pic" style="font-size:0;"><img id="pic" style="width: 100%;"></div>
+		<div class="roomType" id="title"></div>					
+		<div class="one">
+			<ul>
+				<li>房间数量
+					<span class="num" style="font-family: 'aria';">
+						<i id="minus" style="font-style: normal;">-</i>
+						<strong id="num"></strong>
+						<i id="plus" style="font-style: normal;">+</i>
+					</span>
+				</li>
+				<li>入住时间 : 2016年10月26日</li>
+				<li>退房时间 : 2016年10月26日</li>
+				<li>备注 : <span>如有附加需求，请填写</span></li>
+			</ul>
+		</div>
+		<div class="one">
+			<form>
+			<ul>
+				<li>联系人 : <input class="info" style="width:50%">
+					<span class="input" style="width:50%">
+						先生 : <input type="radio" name="gendar" checked="checked">
+						女士 : <input type="radio" name="gendar">
+					</span>		
+				</li>
+				<li>手机号 : <input class="info"  type="text" ></li>
+			</ul>
+			</form>
+		</div>
+		<div class="one last">
+			<div class="top" id="info">
+				<div class="text left ac">入住须知</div>
+				<div class="text right">客房介绍</div>
+				<div class="clearfix"></div>
+			</div>
+			<p id="content">
+				- 在未提供公司或信用卡担保的情况下，酒店最多保留预订至到店当天下午6点（视酒店当日情况而定）<br>
+				- 在担保情况下更改或取消预订请于到店当天下午6点前通知酒店，酒店将有权对其未能及时取消或未抵房间收取第一晚房费未能及时通知取消收取一晚房费<br>
+				- 对于延迟退房，酒店将按规定收取费用。 下午6点前退房，需支付所付房价的50%，6点以后退房，需支付全天房价<br>
+				- 酒店入住时间为下午2点，离店时间为中午12点尽享38平米安静舒适的双床客房 房间特点 房间面积38平方米<br>
+			</p>	
+		</div>
+		<div class="bottom">
+			<div class="left" id="price">
+				总金额 ：899￥
+			</div>
+			<a id="right">
+				立即支付
+			</a>
+		</div>
+			</div>
+			<div class="swiper-slide menu">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="entertainment.html">康体娱乐</a></li>
+					<li><a href="meeting.html">会议会展</a></li>
+					<li><a href="wedding.html">婚宴婚庆</a></li>
+					<li><a href="room.html">舒适房客</a></li>
+					<li><a href="restaurant.html">餐饮美食</a></li>
+					<li><a href="business.html?=business">商务办公</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- Swiper JS -->
+	<script src="js/swiper.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

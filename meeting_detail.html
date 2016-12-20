@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>多功能会议厅</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link href="css/meeting.css" rel="stylesheet">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script>
+	$(function(){
+		var url=window.location.search		
+		var id=url.substring(url.indexOf("=")+1)
+		var result=null;
+		var oDiv=document.getElementsByClassName("meeting")[0];
+		var aDiv=oDiv.getElementsByClassName("swiper-slide");
+		console.log($(aDiv[1]).find("#pic"+1))
+		console.log(id)
+		
+		$.ajax({
+			type:"get",
+			url:"data.json",
+			async:true,
+			success:function(data){
+				result=data.meeting;
+				$(result).each(function(index){
+					if(result[index][id]){
+						swiper2.slideTo(index,1000,false)
+					}
+				})
+				
+				fill(0,"report");
+				fill(1,"dining");
+				fill(2,"meeting");				
+			}			
+		});	
+		function fill(i,name){	
+			$(aDiv[i]).find('#title').html(result[i][name].title);
+			$("#pic"+i).css({"background-image":"url("+result[i][name].imgsrc+")"})
+			$(aDiv[i]).find("#desc span").each(function(index,element){
+				$(aDiv[i]).find("#desc span").eq(index).html(result[i][name].desc[index])
+			})
+			$(aDiv[i]).find("#desc1 span").each(function(index,element){
+				$(aDiv[i]).find("#desc1 span").eq(index).html(result[i][name].desc1[index])
+			})
+		}
+	})
+	</script>
+	<!-- Demo styles -->
+</head>
+<body>
+	<!-- Swiper -->
+	<div class="swiper-container swiper1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide content">
+				<div class="nav-bar">
+					<div class="left"><a href="meeting.html"><img src="img/back_icon.png"></a></div>
+					<div class="mid">多功能会议厅</div>
+					<div class="right button"><a href="#"><img src="img/menu_icon.png"></a></div>
+				</div>	
+				<div class="swiper-container swiper2">
+                    <div class="swiper-wrapper meeting">
+                        <div class="swiper-slide" id="pic0">
+			            	<div class="text">
+			            		<h2 id="title"></h2>
+			            		<p id="desc">
+			            			<span></span><br>
+			            			<span></span>
+								</p>
+								<p class="des" id="desc1">
+									<span></span><br>
+									<span></span><br>
+									<span></span>
+								</p>
+			            	</div>
+			            </div>
+			             <div class="swiper-slide" id="pic1">
+			            	<div class="text">
+			            		<h2 id="title"></h2>
+			            		<p id="desc">
+			            			<span></span><br>
+			            			<span></span>
+								</p>
+								<p class="des" id="desc1">
+									<span></span><br>
+									<span></span><br>
+									<span></span>
+								</p>
+			            	</div>
+			            </div>
+			             <div class="swiper-slide" id="pic2">
+			            	<div class="text">
+			            		<h2 id="title"></h2>
+			            		<p id="desc">
+			            			<span></span><br>
+			            			<span></span>
+								</p>
+								<p class="des" id="desc1">
+									<span></span><br>
+									<span></span><br>
+									<span></span>
+								</p>
+			            	</div>
+			            </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-v"></div>
+                </div>
+			</div>	
+			<div class="swiper-slide menu">
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="entertainment.html">康体娱乐</a></li>
+					<li><a href="meeting.html">会议会展</a></li>
+					<li><a href="wedding.html">婚宴婚庆</a></li>
+					<li><a href="room.html">舒适房客</a></li>
+					<li><a href="restaurant.html">餐饮美食</a></li>
+					<li><a href="business.html?=business">商务办公</a></li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- Swiper JS -->
+	<script src="js/swiper.min.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
